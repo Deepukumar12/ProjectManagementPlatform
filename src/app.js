@@ -31,10 +31,15 @@ app.use(cors({
 
 // import the routes
 import healthCheckRoute from "./routes/healthcheck.routes.js";
+import authRouter from "./routes/auth.routes.js";
+
+
 app.use("/api/v1/healthcheck", healthCheckRoute);
+app.use("/api/v1/auth", authRouter);
 
 app.get("/", (req, res) => {
     res.send("this is a healthcheck route!");
 });
+
 
 export default app;
